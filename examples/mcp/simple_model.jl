@@ -40,8 +40,9 @@ m = MCPModel()
 @complementarity(m, fxdemand, p)
 
 
-status = solveMCP(m; convergence_tolerance=1e-8, output="yes", time_limit=3600)
+status, info = solveMCP(m; convergence_tolerance=1e-8, output="yes", time_limit=3600)
 
+@show info.total_time
 @show result_value.(x)
 @show result_value.(w)
 @show result_value.(p)

@@ -254,7 +254,7 @@ function _solve_path!(m::JuMP.Model; kwargs...)
 
 
     # This function has changed the content of m already.
-    return return_type[Int(status)]
+    return return_type[Int(status)], info
 end
 
 
